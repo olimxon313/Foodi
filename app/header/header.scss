@@ -23,7 +23,7 @@
             text-decoration: none;
 
             &:hover {
-                color: #ccc; // Легкий эффект на ховер
+                color: #ccc;
             }
         }
     }
@@ -36,7 +36,7 @@
         img {
             width: 80px;
             height: 80px;
-            margin-left: 30px;
+            margin-left: 40px;
         }
     }
 
@@ -55,28 +55,29 @@
             transition: transform 0.3s ease;
 
             &:hover {
-                transform: scale(1.1); // Легкий зум при наведении
+                transform: scale(1.1);
             }
         }
 
         .member {
             cursor: pointer;
-            width: 200px; // Подогнано под хедер
-            height: 50px; // Немного уменьшен размер
-            border-radius: 25px; // Более округлая форма
+            width: 200px;
+            height: 50px;
+            border-radius: 25px;
             border: none;
             background-color: #fff;
             color: #000000;
             font-size: 17px;
             font-weight: 600;
-            transition: all 0.3s ease; // Плавный переход для всех эффектов
+            transition: all 0.3s ease;
 
             &:hover {
-                background-color: #000000; // Меняем фон на черный
-                color: #ffffff; // Цвет текста белый
-                box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); // Светлая тень
-                transform: scale(1.1); // Увеличение при наведении
+                background-color: #000000;
+                color: #ffffff;
+                box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+                transform: scale(1.1);
             }
         }
     }
 }
+
