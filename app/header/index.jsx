@@ -19,8 +19,8 @@ export default function Header() {
             </div>
             <div className="links">
                 <Link href="/">Welcome</Link>
-                <Link href="#menu">Our Menu</Link>
-                <a href="#about">About</a>
+                <Link href="#menu" onClick={() => toggleMenu()}>Our Menu</Link>
+                <a href="#about" onClick={() => toggleMenu()}>About</a>
                 <Link href="/contact">Contact</Link>
                 {menuOpen && (
                     <div className="icons">
