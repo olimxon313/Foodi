@@ -1,6 +1,6 @@
 import './landing.scss'
-import About from './About';  
-import Menu from './Menu/index.jsx'
+import About from './about';  
+import Menu from './Menu'
 
 export default function Home() {
   return (
