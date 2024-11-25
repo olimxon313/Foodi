@@ -147,9 +147,10 @@
     }
 
     .tabs {
-      flex-direction: column;
-      gap: 15px;
-
+      flex-direction: row;
+      padding: 0 20px 0 20px;
+      gap: 4px;
+      font-size: 0.8rem;
       button {
         font-size: 0.9rem;
         padding: 8px 10px;
