@@ -1,35 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
 .about {
     padding: 50px 20px;
     text-align: center;
-    color: #333;
+    color: white;
+    background-color: #000000;
+    padding-top: 100px;
     h1 {
         font-size: 36px;
         font-weight: bold;
         margin-bottom: 20px;
     }
-
+    
     p {
         font-size: 18px;
         line-height: 1.6;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
     }
-
+    
     div {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
         gap: 40px;
         align-items: center;
-
+        
         .text {
+            padding: 100px 100px 100px 150px;
             width: 100%;
-            margin-left: 250px;
-            p {
-                font-size: 16.2px;
-                color: #555;
-            }
+            text-align: left;
+            width: 100%;
+            font-size: 18px;
+            color: #EEEEEE;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            line-height: 1.8;
         }
 
         .video {
+            margin-top: 15px;
+            cursor: pointer;
+            width: 100%;
+            padding-right: 100px;
             display: flex;
             justify-content: center;
             align-items: center;

@@ -10,7 +10,7 @@ export default function Header() {
             <div className='links'>
             <Link href="/">Welcome</Link>
             <Link href="/menu">Our Menu</Link>
-            <Link href="/about">About</Link>
+            <a href="#about">About</a>
             <Link href="/contact">Contact</Link>
             </div>
             <div className='logo'>
