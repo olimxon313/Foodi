@@ -10,6 +10,7 @@ html {
     color: white;
     background-color: #000000;
     padding-top: 100px;
+
     h1 {
         font-size: 36px;
         font-weight: bold;
@@ -28,12 +29,11 @@ html {
         display: flex;
         gap: 40px;
         align-items: center;
-        
+
         .text {
             padding: 100px 100px 100px 150px;
             width: 100%;
             text-align: left;
-            width: 100%;
             font-size: 18px;
             color: #EEEEEE;
             font-family: "Inter", sans-serif;
@@ -50,6 +50,7 @@ html {
             justify-content: center;
             align-items: center;
             margin-bottom: 40px;
+
             img {
                 max-width: 100%;
                 border-radius: 15px;
@@ -57,5 +58,29 @@ html {
             }
         }
     }
-}
 
+    // Медиа-запросы для мобильной версии
+    @media (max-width: 950px) {
+        div {
+            flex-direction: column; // Элементы располагаются вертикально
+            gap: 20px;
+
+            .text {
+                padding: 20px;
+                text-align: center; // Текст по центру для мобильной версии
+            }
+
+            .video {
+                padding: 0; // Убираем отступы
+            }
+        }
+
+        h1 {
+            font-size: 28px; // Уменьшение размера заголовка
+        }
+
+        p {
+            font-size: 16px; // Уменьшение шрифта параграфа
+        }
+    }
+}
