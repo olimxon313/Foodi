@@ -5,7 +5,10 @@ $medium: 950px;
 $large: 1200px;
 $x-large: 1350px;
 $xx-large: 1525px;
-
+*{
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
 .home {
   height: 800px;
   background-image: url('/images/Background.png');
