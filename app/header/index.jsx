@@ -19,7 +19,7 @@ export default function Header() {
             </div>
             <div className="links">
                 <Link href="/">Welcome</Link>
-                <Link href="/menu">Our Menu</Link>
+                <Link href="#menu">Our Menu</Link>
                 <a href="#about">About</a>
                 <Link href="/contact">Contact</Link>
                 {menuOpen && (

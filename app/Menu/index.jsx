@@ -30,7 +30,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="menu">
+    <div id="menu" className="menu">
       <h2>Our Best & Delicious Menu</h2>
       <div className="tabs">
         {["All", "Bread", "Rolls", "Donut", "Pastry", "Cakes", "Cookies"].map((tab, index) => (
