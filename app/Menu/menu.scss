@@ -1,22 +1,118 @@
+.menu {
+  text-align: center;
+  color: #fff;
+  padding: 20px 130px 20px 130px;
+  background-color: #000;
 
-.menu-page-wrapper{
-    background-color: #000000;
-    color: white;
-    text-align: center;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-   
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
 
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    button {
+      background: none;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: color 0.3s;
 
+      &.active {
+        color: #f90;
+        border-bottom: 2px solid #f90;
+      }
+
+      &:hover {
+        color: #f90;
+      }
+    }
+  }
+  
+  .grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    .card {
+      background: #1c1c1c;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+      }
+      
+      .image {
+        width: 100%;
+        background: #333;
+        height: 170px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        text-align: center;
+        padding-top: 10px;
+        img{
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin: 0 0 10px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #ccc;
+        margin-bottom: 10px;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          font-size: 1rem;
+          font-weight: bold;
+        }
+
+        .cart {
+          background: #f90;
+          border: none;
+          color: #fff;
+          padding: 5px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .see-all {
+    background: #f90;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #ffb347;
+    }
+  }
 }
-
-//$small: 600px;
-// $medium: 950px;
-// $large: 1200px;
-// $x-large: 1350px;
-// $xx-large: 1525px;
-
-// @media (max-width: $x-large) {}
-// @media (max-width: $large) {}
-// @media (max-width: $medium) {}
-// @media (max-width: $small) {}

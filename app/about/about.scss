@@ -59,28 +59,28 @@ html {
         }
     }
 
-    // Медиа-запросы для мобильной версии
     @media (max-width: 950px) {
         div {
-            flex-direction: column; // Элементы располагаются вертикально
+            flex-direction: column;
             gap: 20px;
 
             .text {
                 padding: 20px;
-                text-align: center; // Текст по центру для мобильной версии
+                text-align: center;
             }
 
             .video {
-                padding: 0; // Убираем отступы
+                padding: 0;
             }
         }
 
         h1 {
-            font-size: 28px; // Уменьшение размера заголовка
+            font-size: 28px;
         }
 
         p {
-            font-size: 16px; // Уменьшение шрифта параграфа
+            font-size: 16px;
         }
     }
 }
+
