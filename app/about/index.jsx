@@ -24,7 +24,7 @@ export default function About() {
                     humour and the like.
                 </div>
                 <div className='video'>
-                    <img src="/images/Video-1.png" alt="" />
+                    <a href="https://youtu.be/dQw4w9WgXcQ?si=3xsrZEjwKGVM-_2g" target="_blank"><img src="/images/Video-1.png" alt="" /></a>
                 </div>
             </div>
         </div>
