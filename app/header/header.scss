@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-// Переменные для медиазапросов
-$small: 600px;
-$medium: 950px;
-$large: 1200px;
-$x-large: 1350px;
-$xx-large: 1525px;
-
 .header {
     background-color: #000000;
     height: 128px;
@@ -108,7 +101,7 @@ $xx-large: 1525px;
         }
     }
 
-    @media (max-width: $medium) {
+    @media (max-width: 950px) {
         grid-template-columns: 1fr;
 
         .links {
@@ -120,8 +113,7 @@ $xx-large: 1525px;
         .icons {
             display: none;
         }
-        
-        &.open {
+        .open {
             position: fixed;
             height: 100%;
             width: 100%;
@@ -160,10 +152,10 @@ $xx-large: 1525px;
                 }
             }
         }
-        
         #burger-menu-wrapper {
             display:block;
             position: fixed;
         }
     }
 }
+
