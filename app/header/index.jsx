@@ -18,10 +18,10 @@ export default function Header() {
                 <div></div>
             </div>
             <div className="links">
-                <Link href="/">Welcome</Link>
+                <Link href="/" onClick={() => toggleMenu()}>Welcome</Link>
                 <Link href="#menu" onClick={() => toggleMenu()}>Our Menu</Link>
                 <a href="#about" onClick={() => toggleMenu()}>About</a>
-                <Link href="/contact">Contact</Link>
+                <Link href="#contact" onClick={() => toggleMenu()}>Contact</Link>
                 {menuOpen && (
                     <div className="icons">
                         <IoCartSharp className="cart" />

@@ -104,7 +104,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-container">
+    <div className="contact-container" id='contact'>
       <ToastContainer />
       <div className="contact-form-container">
         <h2>Связаться с нами</h2>
