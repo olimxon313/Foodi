@@ -68,11 +68,66 @@ $xx-large: 1525px;
         transform: scale(0.9);
         background-color: #cccccc8f;
     }
+  }
+}
+}.stats {
+  text-align: center;
+  color: #fff;
+  padding: 100px 130px 20px 130px;
+  background-color: #000;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 100px;
+    margin-top: 70px;
+
+    @media (max-width: 950px) {
+      flex-wrap: wrap;
+      gap: 50px;
     }
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .stats-item {
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0px;
+
+      @media (max-width: 600px) {
+        font-size: 1.8rem;
+      }
+    }
+    p {
+      font-size: 1rem;
+
+      @media (max-width: 600px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    padding: 80px 80px 20px 80px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 50px 20px 20px 20px;
   }
 }
 
-// Медиазапросы
 @media (max-width: $x-large) {
   .home {
     height: 700px;

@@ -1,0 +1,139 @@
+.testimonials {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 100px 100px 100px 100px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 1rem;
+      background-color: #222;
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #888;
+      }
+    }
+
+    .rating {
+      color: #ffc107;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .line {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      color: white;
+
+      hr {
+        flex: 1;
+        border: none;
+        height: 1px;
+        background-color: #ccc;
+        margin-left: 10px;
+      }
+    }
+
+    .feedback {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+
+  @media (max-width: 950px) {
+    padding: 50px;
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .card {
+      padding: 1rem;
+
+      .header {
+        .avatar {
+          width: 45px;
+          height: 45px;
+        }
+
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+
+      .rating {
+        font-size: 1rem;
+      }
+
+      .feedback {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .card {
+      padding: 0.8rem;
+
+      .header {
+        .avatar {
+          width: 40px;
+          height: 40px;
+        }
+
+        h3 {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
+      .feedback {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
