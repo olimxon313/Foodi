@@ -35,15 +35,6 @@ const ContactForm = () => {
       });
       return false;
     }
-    if (!portfolio) {
-      toast.error("Пожалуйста, введите ссылку на портфолио!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: true,
-        style: { backgroundColor: 'black', color: 'white' },
-      });
-      return false;
-    }
     if (!message) {
       toast.error("Сообщение не может быть пустым!", {
         position: "top-right",
