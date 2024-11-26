@@ -20,13 +20,13 @@
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
+    margin-top: 50px;
     .header {
+      background-color: #222;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       margin-bottom: 1rem;
-      background-color: #222;
 
       .avatar {
         width: 50px;
@@ -44,26 +44,44 @@
         font-size: 0.9rem;
         color: #888;
       }
+
+      .rating {
+        color: #ffc107;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .line {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: white;
+
+        hr {
+          flex: 1;
+          border: none;
+          height: 1px;
+          background-color: #ccc;
+          margin-left: 10px;
+        }
+      }
     }
 
-    .rating {
-      color: #ffc107;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    .line {
+    .like-section {
       display: flex;
+      float: right;
       align-items: center;
-      margin-bottom: 1rem;
-      color: white;
+      margin-top: 1rem;
 
-      hr {
-        flex: 1;
-        border: none;
-        height: 1px;
-        background-color: #ccc;
-        margin-left: 10px;
+      .heart {
+        font-size: 1.8rem;
+        cursor: pointer;
+        margin-right: 0.5rem;
+      }
+
+      .like-count {
+        font-size: 1rem;
+        color: #ffc107;
       }
     }
 
@@ -104,6 +122,16 @@
       .feedback {
         font-size: 0.9rem;
       }
+
+      .like-section {
+        .heart {
+          font-size: 1.6rem;
+        }
+
+        .like-count {
+          font-size: 0.9rem;
+        }
+      }
     }
   }
 
@@ -132,6 +160,16 @@
 
       .feedback {
         font-size: 0.85rem;
+      }
+
+      .like-section {
+        .heart {
+          font-size: 1.5rem;
+        }
+
+        .like-count {
+          font-size: 0.8rem;
+        }
       }
     }
   }
