@@ -124,4 +124,51 @@
       background: #ffb347;
     }
   }
+
+  @media (max-width: 1200px) {
+    padding: 20px 80px;
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 950px) {
+    padding: 20px 40px;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 10px 20px;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .tabs {
+      flex-direction: row;
+      padding: 0 20px 0 20px;
+      gap: 4px;
+      font-size: 0.8rem;
+      button {
+        font-size: 0.9rem;
+        padding: 5px 5px;
+      }
+    }
+
+    .grid {
+      gap: 15px;
+    }
+
+    .see-all {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  }
 }
