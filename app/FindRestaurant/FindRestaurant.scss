@@ -1,0 +1,61 @@
+.find-restaurant-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 5rem;
+  }
+  
+  .find-restaurant-info {
+    max-width: 50%;
+  
+    h2 {
+      text-align: left;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  
+    p {
+      width: 50%;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      text-align: left;
+    }
+  
+    .find-restaurant-button {
+        cursor: pointer;
+        width: 200px;
+        height: 50px;
+        border-radius: 25px;
+        border: none;
+        background-color: #fff;
+        color: #000000;
+        font-size: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: #000000;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.9);
+            background-color: #cccccc8f;
+        }
+    }}
+  
+  .find-restaurant-map {
+    width: 45%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+  
+    iframe {
+      border-radius: 10px;
+    }
+  }
+  
