@@ -159,3 +159,34 @@
     }
 }
 
+/* Стили для инпута поиска */
+
+
+.search-input {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 1rem;
+    background-color: #f7f7f7;
+    color: #333;
+    transition: all 0.3s ease;
+  
+    &:focus {
+      border-color: #4a90e2;
+      outline: none;
+      box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+      background-color: #fff;
+    }
+  
+    &::placeholder {
+      color: #aaa;
+      font-style: italic;
+    }
+  
+    @media (max-width: 600px) {
+      max-width: 100%;
+    }
+  }
+  

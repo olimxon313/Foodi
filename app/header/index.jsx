@@ -2,13 +2,15 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { IoCartSharp } from "react-icons/io5";
-import { RiSearchLine } from "react-icons/ri";
+import { RiSearchLine, RiCloseLine } from "react-icons/ri";
 import './header.scss';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [searchOpen, setSearchOpen] = useState(false); // Для управления инпутом
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
+    const toggleSearch = () => setSearchOpen(!searchOpen); // Переключаем состояние инпута
 
     return (
         <div className={`header ${menuOpen ? 'open' : ''}`}>
@@ -25,7 +27,19 @@ export default function Header() {
                 {menuOpen && (
                     <div className="icons">
                         <IoCartSharp className="cart" />
-                        <RiSearchLine className="search" />
+                        <div className="search-container">
+                            <div className="search-icon" onClick={toggleSearch}>
+                                {searchOpen ? <RiCloseLine className="close" /> : <RiSearchLine className="search" />}
+                            </div>
+                            {searchOpen && (
+                                <input
+                                    type="text"
+                                    className="search-input"
+                                    placeholder="Search..."
+                                    autoFocus
+                                />
+                            )}
+                        </div>
                         <button className="member">Become a Member</button>
                     </div>
                 )}
@@ -36,7 +50,19 @@ export default function Header() {
             {!menuOpen && (
                 <div className="icons">
                     <IoCartSharp className="cart" />
-                    <RiSearchLine className="search" />
+                    <div className="search-container">
+                        <div className="search-icon" onClick={toggleSearch}>
+                            {searchOpen ? <RiCloseLine className="close" /> : <RiSearchLine className="search" />}
+                        </div>
+                        {searchOpen && (
+                            <input
+                                type="text"
+                                className="search-input"
+                                placeholder="Search..."
+                                autoFocus
+                            />
+                        )}
+                    </div>
                     <button className="member">Become a Member</button>
                 </div>
             )}
