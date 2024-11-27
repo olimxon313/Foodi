@@ -1,61 +1,101 @@
 .find-restaurant-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000;
-    color: #fff;
-    padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 5rem;
+
+  @media (max-width: 950px) { // $medium breakpoint
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
   }
-  
-  .find-restaurant-info {
-    max-width: 50%;
-  
-    h2 {
-      text-align: left;
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
+}
+
+.find-restaurant-info {
+  max-width: 50%;
+
+  h2 {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+    @media (max-width: 950px) {
+      text-align: center;
     }
-  
-    p {
-      width: 50%;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      text-align: left;
+
+    @media (max-width: 600px) { // $small breakpoint
+      font-size: 1.8rem;
     }
-  
-    .find-restaurant-button {
-        cursor: pointer;
-        width: 200px;
-        height: 50px;
-        border-radius: 25px;
-        border: none;
-        background-color: #fff;
-        color: #000000;
-        font-size: 12px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        &:hover {
-            background-color: #000000;
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-        &:active{
-            transform: scale(0.9);
-            background-color: #cccccc8f;
-        }
-    }}
-  
-  .find-restaurant-map {
-    width: 45%;
-    height: 300px;
+  }
+
+  p {
+    width: 50%;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-align: left;
+
+    @media (max-width: 950px) {
+      width: 100%;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .find-restaurant-button {
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    background-color: #fff;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #000000;
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+      background-color: #cccccc8f;
+    }
+
+    @media (max-width: 600px) {
+      width: 150px;
+      height: 45px;
+      font-size: 10px;
+    }
+  }
+}
+
+.find-restaurant-map {
+  width: 45%;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  iframe {
     border-radius: 10px;
-    overflow: hidden;
-  
-    iframe {
-      border-radius: 10px;
-    }
   }
-  
+
+  @media (max-width: 950px) {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    height: 200px;
+  }
+}
