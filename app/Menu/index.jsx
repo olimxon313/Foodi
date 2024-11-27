@@ -55,6 +55,10 @@ const Menu = () => {
     };
   }, []);
 
+  useEffect(() => {
+    handleScroll();
+  }, [activeTab]);
+
   return (
     <div id="menu" className="menu" ref={menuRef}>
       <h2>Our Best & Delicious Menu</h2>
@@ -103,4 +107,3 @@ const Menu = () => {
 };
 
 export default Menu;
-
