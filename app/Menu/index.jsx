@@ -6,9 +6,9 @@ const Menu = () => {
   const [activeTab, setActiveTab] = useState("All");
   const [visibleItemsCount, setVisibleItemsCount] = useState(6);
   const [showMore, setShowMore] = useState(false);
-  const [visibleCards, setVisibleCards] = useState([]); // Состояние для видимости карточек
+  const [visibleCards, setVisibleCards] = useState([]);
 
-  const menuRef = useRef(null); // Ссылка на компонент для отслеживания
+  const menuRef = useRef(null);
 
   const menuItems = [
     { title: "Naan Burger", price: "$1.85", description: "Delicious Indian naan with burger fillings.", id: 1, category: "Bread", path: "/images/burger-1.png" },
@@ -32,11 +32,10 @@ const Menu = () => {
     }
   };
 
-  // Функция для отслеживания видимости карточек при прокрутке
   const handleScroll = () => {
     const newVisibleCards = [];
-    menuItems.forEach((item, index) => {
-      const card = document.getElementById(`card-${item.id}`);
+    menuItems.forEach((item) => {
+      const card = document.getElementById(`cards-${item.id}`);
       if (card) {
         const rect = card.getBoundingClientRect();
         if (rect.top <= window.innerHeight && rect.bottom >= 0) {
@@ -47,10 +46,9 @@ const Menu = () => {
     setVisibleCards(newVisibleCards);
   };
 
-  // Подключаем слушатель события прокрутки
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Проверяем состояние сразу при монтировании компонента
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -58,11 +56,7 @@ const Menu = () => {
   }, []);
 
   return (
-    <div
-      id="menu"
-      className="menu" // Применяем класс для анимации
-      ref={menuRef}
-    >
+    <div id="menu" className="menu" ref={menuRef}>
       <h2>Our Best & Delicious Menu</h2>
       <div className="tabs">
         {["All", "Bread", "Rolls", "Donut", "Pastry", "Cakes", "Cookies"].map((tab, index) => (
@@ -86,8 +80,8 @@ const Menu = () => {
           .map((item) => (
             <div
               key={item.id}
-              id={`card-${item.id}`}
-              className={`card ${visibleCards.includes(item.id) ? "visible" : ""}`}
+              id={`cards-${item.id}`}
+              className={`cards ${visibleCards.includes(item.id) ? "visible" : ""}`}
             >
               <div className="image">
                 <img src={item.path} alt={item.title} />
