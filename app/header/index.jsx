@@ -49,7 +49,13 @@ export default function Header() {
             </div>
             {!menuOpen && (
                 <div className="icons">
-                    <div>EN</div>
+                    <div className="language-dropdown">
+                        <span className="selected-language">English</span>
+                        <div className="dropdown-menu">
+                            <div className="dropdown-item">Русский</div>
+                            <div className="dropdown-item">Oʻzbekcha</div>
+                        </div>
+                    </div>
                     <IoCartSharp className="cart" />
                     <div className="search-container">
                         <div className="search-icon" onClick={toggleSearch}>

@@ -159,9 +159,75 @@
         }
     }
 }
-
-/* Стили для инпута поиска */
-
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+  
+    .selected-language {
+      background-color: #f4f4f4;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      color: #333;
+      text-align: center;
+      width: 120px;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: #eaeaea;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 5px;
+      width: 120px;
+      display: none;
+      z-index: 10;
+  
+      .dropdown-item {
+        padding: 10px 15px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+     
+      }
+    }
+  
+    &:hover .dropdown-menu {
+      display: block;
+    }
+  
+    @media (max-width: 950px) {
+      .selected-language {
+        font-size: 12px;
+        padding: 8px 12px;
+        width: 100px;
+      }
+  
+      .dropdown-menu {
+        width: 100px;
+  
+        .dropdown-item {
+          font-size: 12px;
+          padding: 8px 12px;
+        }
+      }
+    }
+  }
+  
 
 .search-input {
     width: 90%;
