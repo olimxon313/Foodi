@@ -72,7 +72,7 @@ export default function Header() {
                                         {result.id !== 0 ? (
                                             <div className="search-item">
                                                 {/* зделай так чтобы при нажати закрывалась модалка */}
-                                                <a href="#menu" onClick={() => setSearchOpen(false)}>
+                                                <a href="#menu" onClick={() => { setSearchOpen(false); setMenuOpen(false); }} >
                                                     <div className="search-item-details">
                                                         <h4>{result.title}</h4>
                                                     </div>
