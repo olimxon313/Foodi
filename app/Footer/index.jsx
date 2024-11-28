@@ -11,24 +11,24 @@ const Footer = () => {
         <div className="footer-column">
           <h4 className='h4'>Our Products</h4>
           <ul>
-            <li>Our menus</li>
-            <li>Our burgers</li>
-            <li>Our times sides</li>
-            <li>Our naanwiches</li>
+            <a href="#menu"><li>Our menus</li></a>
+            <a href="#menu"><li>Our burgers</li></a>
+            <a href="#about"> <li>Our times sides</li></a>
+            <a href="#menu"><li>Our naanwiches</li></a>
           </ul>
         </div>
         <div className="footer-column">
           <h4 className='h4'>Legal information</h4>
           <ul>
-            <li>Legal Notice</li>
+            <a href="#stats"><li>Legal Notice</li></a>
           </ul>
         </div>
         <div className="footer-column">
           <h4 className='h4'>Contact us</h4>
           <ul>
-            <li>Contacts</li>
-            <li>Our addresses</li>
-            <li>Become a Times Square franchisee</li>
+            <a href="#contact"><li>Contacts</li></a>
+            <a href="#addres"><li>Our addresses</li></a>
+            <a href="#header"><li>Become a Times Square franchisee</li></a>
           </ul>
         </div>
         <div className="footer-column">

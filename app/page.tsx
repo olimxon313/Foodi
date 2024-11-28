@@ -23,7 +23,7 @@ export default function Home() {
       </div>
       < About />
       <Menu />
-      <div className='stats'>
+      <div className='stats' id='stats'>
         <h1 className='stats-title'>
           We believe in making quality food
         </h1>

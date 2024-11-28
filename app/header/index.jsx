@@ -6,7 +6,7 @@ import { RiSearchLine, RiCloseLine } from "react-icons/ri";
 import './header.scss';
 import productsData from '../../db.json';
 
-export default function Header() {  
+export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
@@ -35,7 +35,7 @@ export default function Header() {
     }
 
     return (
-        <div className={`header ${menuOpen ? 'open' : ''}`}>
+        <div className={`header ${menuOpen ? 'open' : ''}`}id='header'>
             <div id="burger-menu-wrapper" onClick={toggleMenu}>
                 <div></div>
                 <div></div>
@@ -51,6 +51,15 @@ export default function Header() {
                 <img src={'/images/Logo.png'} alt="Logo" />
             </div>
             <div className="icons">
+                <div class="language-dropdown">
+                    <span class="selected-language">Русский</span>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item">Русский</div>
+                        <div class="dropdown-item">Turkish</div>
+                        <div class="dropdown-item">English</div>
+                    </div>
+                </div>
+
                 <IoCartSharp className="cart" />
                 <div className="search-container">
                     <div className="search-icon" onClick={toggleSearch}>
@@ -71,7 +80,6 @@ export default function Header() {
                                     <li key={result.id}>
                                         {result.id !== 0 ? (
                                             <div className="search-item">
-                                                {/* зделай так чтобы при нажати закрывалась модалка */}
                                                 <a href="#menu" onClick={() => { setSearchOpen(false); setMenuOpen(false); }} >
                                                     <div className="search-item-details">
                                                         <h4>{result.title}</h4>

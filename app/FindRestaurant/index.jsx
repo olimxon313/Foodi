@@ -2,7 +2,7 @@ import './FindRestaurant.scss';
 
 const FindRestaurant = () => {
   return (
-    <div className="find-restaurant-container">
+    <div className="find-restaurant-container" id="address">
       <div className="find-restaurant-info">
         <h2>Our Restaurants. Where to Find Us?</h2>
         <p>
