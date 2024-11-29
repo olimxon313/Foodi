@@ -16,7 +16,7 @@ export default function Header() {
 
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
-        setIsLogged(!!storedToken); // Приведение значения к булевому типу
+        setIsLogged(!!storedToken); 
     }, []);
 
     const products = productsData; 
@@ -106,7 +106,7 @@ export default function Header() {
                     )}
                 </div>
                 {isLogged ? (
-                    <Link href="/"><button className="member">Account</button></Link>
+                    <Link href="/basket"><button className="member">Account</button></Link>
                 ) : (
                     <Link href="/login"><button className="member">Become a Member</button></Link>
                 )}

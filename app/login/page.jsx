@@ -33,6 +33,7 @@ export default function Login() {
         if (user) {
             toast.success("Login successful!");
             localStorage.setItem("token", user.email);
+            localStorage.setItem("id", user.id);
             setTimeout(() => {
                 router.push("/");
             },2000)

@@ -10,7 +10,9 @@ export default function Registr() {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
+        basket : [],
         confirmPassword: "",
+        id : Math.random()
     });
 
     const handleChange = (e) => {
@@ -20,7 +22,7 @@ export default function Registr() {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        const { email, password, confirmPassword } = formData;
+        const { email, password, confirmPassword , basket ,id } = formData;
 
         if (!email || !password || !confirmPassword) {
             toast.error("All fields are required!");
@@ -40,7 +42,7 @@ export default function Registr() {
                 toast.error("User with this email already exists!");
                 return;
             }
-            const newUser = { email, password };
+            const newUser = { email, password ,basket , id };
             await fetch("http://localhost:3001/users", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -48,7 +50,7 @@ export default function Registr() {
             });
 
             toast.success("Registration successful!");
-            setFormData({ email: "", password: "", confirmPassword: "" });
+            setFormData({ email: "", password: "", confirmPassword: "" ,id : Math.random()});
             setTimeout(() => router.push("/login"), 2000);
         } catch (error) {
             console.error("Error registering user:", error);

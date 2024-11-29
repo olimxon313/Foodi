@@ -1,25 +1,17 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "John",
       "email": "example@gmail.com",
-      "password": "123"
+      "password": "123",
+      "basket": []
     },
     {
-      "id": "0399",
+      "id": "0.3036810148592366",
       "email": "olim@gmail.com",
-      "password": "olim123"
-    },
-    {
-      "id": "bdab",
-      "email": "example@gmail.com",
-      "password": "password"
-    },
-    {
-      "id": "25f4",
-      "email": "examplle@gmail.com",
-      "password": "password"
+      "password": "pass",
+      "basket": []
     }
   ]
 }
