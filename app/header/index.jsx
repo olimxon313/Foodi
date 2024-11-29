@@ -1,41 +1,51 @@
 'use client';
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { IoCartSharp } from "react-icons/io5";
 import { RiSearchLine, RiCloseLine } from "react-icons/ri";
 import './header.scss';
-import productsData from '../../db.json';
+import productsData from '../../db.json'; 
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
     const [searchValue, setSearchValue] = useState('');
+    const [isLogged, setIsLogged] = useState(false);
 
-    // Данные из JSON
-    const products = productsData;
+    useEffect(() => {
+        const storedToken = localStorage.getItem("token");
+        setIsLogged(!!storedToken); // Приведение значения к булевому типу
+    }, []);
 
-    const toggleMenu = () => setMenuOpen(!menuOpen);
+    const products = productsData; 
+
+    const toggleMenu = () => setMenuOpen((prev) => !prev);
     const toggleSearch = () => {
-        setSearchOpen(!searchOpen);
-        setSearchValue('');
-        setSearchResults([]);
+        setSearchOpen((prev) => !prev);
+        if (searchOpen) {
+            setSearchValue('');
+            setSearchResults([]);
+        }
     };
 
-    function handleSearch(e) {
+    const handleSearch = (e) => {
         const value = e.target.value.toLowerCase();
         setSearchValue(value);
 
-        if (value.length === 0) {
+        if (value.trim().length === 0) {
             setSearchResults([]);
         } else {
-            const result = products.filter(p => p.title.toLowerCase().includes(value));
+            const result = products.filter((p) => 
+                p.title && p.title.toLowerCase().includes(value)
+            );
             setSearchResults(result.length ? result : [{ id: 0, title: "No results found" }]);
         }
-    }
+    };
 
     return (
-        <div className={`header ${menuOpen ? 'open' : ''}`}id='header'>
+        <div className={`header ${menuOpen ? 'open' : ''}`} id="header">
             <div id="burger-menu-wrapper" onClick={toggleMenu}>
                 <div></div>
                 <div></div>
@@ -51,12 +61,12 @@ export default function Header() {
                 <img src={'/images/Logo.png'} alt="Logo" />
             </div>
             <div className="icons">
-                <div class="language-dropdown">
-                    <span class="selected-language">Русский</span>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-item">Русский</div>
-                        <div class="dropdown-item">Turkish</div>
-                        <div class="dropdown-item">English</div>
+                <div className="language-dropdown">
+                    <span className="selected-language">Русский</span>
+                    <div className="dropdown-menu">
+                        <div className="dropdown-item">Русский</div>
+                        <div className="dropdown-item">Turkish</div>
+                        <div className="dropdown-item">English</div>
                     </div>
                 </div>
 
@@ -80,7 +90,7 @@ export default function Header() {
                                     <li key={result.id}>
                                         {result.id !== 0 ? (
                                             <div className="search-item">
-                                                <a href="#menu" onClick={() => { setSearchOpen(false); setMenuOpen(false); }} >
+                                                <a href="#menu" onClick={() => { setSearchOpen(false); setMenuOpen(false); }}>
                                                     <div className="search-item-details">
                                                         <h4>{result.title}</h4>
                                                     </div>
@@ -95,7 +105,11 @@ export default function Header() {
                         </div>
                     )}
                 </div>
-                <button className="member">Become a Member</button>
+                {isLogged ? (
+                    <Link href="/"><button className="member">Account</button></Link>
+                ) : (
+                    <Link href="/login"><button className="member">Become a Member</button></Link>
+                )}
             </div>
         </div>
     );
