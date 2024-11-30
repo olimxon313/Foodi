@@ -8,10 +8,18 @@
       "basket": []
     },
     {
-      "id": "0.3036810148592366",
+      "id": "2",
       "email": "olim@gmail.com",
       "password": "pass",
       "basket": [
+        {
+          "title": "Naan Burger",
+          "price": "$1.85",
+          "description": "Delicious Indian naan with burger fillings.",
+          "id": 1,
+          "category": "Bread",
+          "path": "/images/burger-1.png"
+        },
         {
           "title": "Sandwich",
           "price": "$2.80",
@@ -29,20 +37,20 @@
           "path": "/images/burger-6.png"
         },
         {
-          "title": "Butter Chicken Taco",
-          "price": "$1.15",
-          "description": "Classic taco with a butter chicken twist.",
-          "id": 2,
-          "category": "Rolls",
-          "path": "/images/burger-2.png"
+          "title": "3 Layer Burger",
+          "price": "$4.99",
+          "description": "Triple-layer burger for the big appetite.",
+          "id": 5,
+          "category": "Cakes",
+          "path": "/images/burger-4.png"
         },
         {
-          "title": "Naan Burger",
-          "price": "$1.85",
-          "description": "Delicious Indian naan with burger fillings.",
-          "id": 1,
-          "category": "Bread",
-          "path": "/images/burger-1.png"
+          "title": "Chocolate Donut",
+          "price": "$1.75",
+          "description": "Sweet chocolate donut for dessert lovers.",
+          "id": 9,
+          "category": "Donut",
+          "path": "/images/burger-2.png"
         }
       ]
     }

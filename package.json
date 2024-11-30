@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "startjson":"json-server --watch database.json --port 3001"
+    "startjson": "json-server --watch database.json --port 3001"
   },
   "dependencies": {
     "emailjs-com": "^3.2.0",

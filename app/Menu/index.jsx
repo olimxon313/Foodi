@@ -2,8 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import menuItems from '../../db.json';
 import "./menu.scss";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Menu = () => {
   const [activeTab, setActiveTab] = useState("All");
   const [visibleItemsCount, setVisibleItemsCount] = useState(6);
@@ -12,6 +13,7 @@ const Menu = () => {
   const [userId, setUserId] = useState();
   const [userBasket, setUserBasket] = useState([]);
   const [isLogged, setIsLogged] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const menuRef = useRef(null);
 
@@ -60,61 +62,60 @@ const Menu = () => {
   }, [activeTab]);
 
   async function handleAddToBasket(productId) {
-    if (isLogged) {
-      try {
-        const product = menuItems.find((item) => item.id === productId);
-        if (!product) {
-          toast.error("Product not found.");
-          return;
-        }
-  
-        const response = await fetch(`http://localhost:3001/users/${userId}`);
-        if (!response.ok) throw new Error("Failed to fetch user data");
-        const user = await response.json();
-  
-        const productExists = user.basket?.some((item) => item.id === productId);
-        if (productExists) {
-          toast.error("Product is already in the basket.");
-          return;
-        }
-  
-        const updatedBasket = user.basket
-          ? [...user.basket, product] 
-          : [product];
-  
-        await fetch(`http://localhost:3001/users/${userId}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...user, basket: updatedBasket }),
-        });
+    if (!productId) {
+      return; // Убираем уведомления, просто завершаем функцию, если нет ID товара
+    }
 
-        setUserBasket(updatedBasket);
-        toast.success("Product added to basket: " + product.title);
-      } catch (error) {
-        toast.error("Error adding product to basket: " + error.message);
+    if (!isLogged) {
+      toast.error("Please log in to add items to the basket.");
+      return; // Если пользователь не авторизован, просто завершаем функцию
+    }
+
+    if (buttonDisabled) {
+      return; // Если кнопка заблокирована, не выполняем функцию
+    }
+
+    setButtonDisabled(true);
+
+    try {
+      const product = menuItems.find((item) => item.id === productId);
+      if (!product) {
+        return; // Если товар не найден, завершаем выполнение
       }
-    } else {
-      toast.error("User is not logged in.");
+
+      const response = await fetch(`http://localhost:3001/users/${userId}`);
+      if (!response.ok) throw new Error("Failed to fetch user data");
+
+      const user = await response.json();
+      if (!user || !user.basket) {
+        return; // Если данные пользователя некорректны, завершаем выполнение
+      }
+
+      const productExists = user.basket.some((item) => item.id === productId);
+      if (productExists) {
+        toast.info("This item is already in your basket.");
+        return; // Если товар уже в корзине, завершаем выполнение
+      }
+
+      const updatedBasket = [...user.basket, product];
+      await fetch(`http://localhost:3001/users/${userId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...user, basket: updatedBasket }),
+      });
+
+      setUserBasket(updatedBasket);
+      toast.success("Item successfully added to your basket.");
+    } catch (error) {
+      console.error("Error adding product to basket:", error);
+      toast.error("Error adding item to basket. Please try again.");
+    } finally {
+      setTimeout(() => setButtonDisabled(false), 3000); // Сбрасываем блокировку через 3 секунды
     }
   }
-  
 
   return (
     <div id="menu" className="menu" ref={menuRef}>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <h2>Our Best & Delicious Menu</h2>
       <div className="tabs">
         {["All", "Bread", "Rolls", "Donut", "Pastry", "Cakes", "Cookies"].map((tab, index) => (
@@ -148,7 +149,13 @@ const Menu = () => {
               <p>{item.description}</p>
               <div className="footer">
                 <span>{item.price}</span>
-                <button onClick={() => handleAddToBasket(item.id)} className="cart">🛒</button>
+                <button
+                  onClick={() => handleAddToBasket(item.id)}
+                  className="cart"
+                  disabled={buttonDisabled}
+                >
+                  🛒
+                </button>
               </div>
             </div>
           ))}
@@ -156,6 +163,7 @@ const Menu = () => {
       <button className="see-all" onClick={handleSeeAll}>
         {showMore ? "Close All" : "See All"}
       </button>
+      <ToastContainer />
     </div>
   );
 };
