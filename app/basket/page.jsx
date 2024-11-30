@@ -100,23 +100,23 @@ export default function Basket() {
                 theme="light"
             />
             {isLogged ? (
-                <div>
-                    <h2>Your Basket</h2>
-                    <button onClick={() => handleLogOut()}>Log out</button>
+                <div className="basket-container">
+                    <h2 className="basket-header">Your Basket</h2>
+                    <button className="basket-logout-button" onClick={() => handleLogOut()}>Log out</button>
                     <ul>
                         {userBasket.length > 0 ? (
                             userBasket.map((item, index) => (
-                                <div key={index}>
+                                <div key={index} className="basket-item">
                                     <img src={item.path} alt="" />
                                     <div>{item.description}</div>
                                     <div>{item.price}</div>
                                     <div>{item.title}</div>
                                     <div>{item.category}</div>
-                                    <button onClick={() => handleDeleteProduct(item.id)}>Delete</button>
+                                    <button className="basket-item-delete-button" onClick={() => handleDeleteProduct(item.id)}>Delete</button>
                                 </div>
                             ))
                         ) : (
-                            <p>Your basket is empty.</p>
+                            <p className="basket-empty-message">Your basket is empty.</p>
                         )}
                     </ul>
                 </div>

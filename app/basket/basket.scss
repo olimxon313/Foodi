@@ -1,0 +1,63 @@
+.basket-container {
+    padding: 20px;
+}
+
+.basket-header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.basket-logout-button {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.basket-logout-button:hover {
+    background-color: #d32f2f;
+}
+
+.basket-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.basket-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.basket-item-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+
+.basket-item-details div {
+    margin-bottom: 5px;
+}
+
+.basket-item-delete-button {
+    padding: 5px 10px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.basket-item-delete-button:hover {
+    background-color: #e64a19;
+}
+
+.basket-empty-message {
+    font-size: 1.2rem;
+    color: #777;
+}
