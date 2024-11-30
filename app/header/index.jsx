@@ -70,7 +70,8 @@ export default function Header() {
                     </div>
                 </div>
 
-                <IoCartSharp className="cart" />
+                
+                <Link href="/basket"><IoCartSharp className="cart" /></Link>
                 <div className="search-container">
                     <div className="search-icon" onClick={toggleSearch}>
                         {searchOpen ? <RiCloseLine className="close" /> : <RiSearchLine className="search" />}

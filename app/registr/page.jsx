@@ -1,6 +1,7 @@
 'use client';
 import "./registr.scss";
 import { useState } from "react";
+import Link from "next/link";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
@@ -61,6 +62,7 @@ export default function Registr() {
     return (
         <div className="registr">
             <div className="registr-wrapper">
+                Временно не работает!   
                 <h1 className="registr-title">Register</h1>
                 <form className="registr-form" onSubmit={handleRegister}>
                     <label>Email</label>
@@ -93,6 +95,7 @@ export default function Registr() {
                     <button type="submit" className="registr-button">
                         Register
                     </button>
+                    <Link href="login">Have an account?</Link>
                 </form>
                 <ToastContainer
                     position="top-right"

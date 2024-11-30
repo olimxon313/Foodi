@@ -47,6 +47,11 @@ export default function Login() {
 
     return (
         <div className="login">
+            <div className="login-info">
+            Заходите через: <br /> <br />
+            Email: <span className="info">olimxon@gmail.com</span> <br />
+            Password: <span className="info">qweqwe</span>
+            </div>
             <div className="login-wrapper">
                 <span className="login-title">Login</span>
                 <form className="login-form" onSubmit={handleLogin}>
