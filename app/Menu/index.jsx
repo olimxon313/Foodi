@@ -88,13 +88,13 @@ const Menu = () => {
 
       const user = await response.json();
       if (!user || !user.basket) {
-        return; // Если данные пользователя некорректны, завершаем выполнение
+        return; 
       }
 
       const productExists = user.basket.some((item) => item.id === productId);
       if (productExists) {
         toast.info("This item is already in your basket.");
-        return; // Если товар уже в корзине, завершаем выполнение
+        return;
       }
 
       const updatedBasket = [...user.basket, product];
@@ -110,7 +110,7 @@ const Menu = () => {
       console.error("Error adding product to basket:", error);
       toast.error("Error adding item to basket. Please try again.");
     } finally {
-      setTimeout(() => setButtonDisabled(false), 3000); // Сбрасываем блокировку через 3 секунды
+      setTimeout(() => setButtonDisabled(false), 5000); 
     }
   }
 
@@ -150,7 +150,7 @@ const Menu = () => {
               <div className="footer">
                 <span>{item.price}</span>
                 <button
-                  onClick={() => handleAddToBasket(item.id)}
+                  onClick={( ) => handleAddToBasket(item.id)}
                   className="cart"
                   disabled={buttonDisabled}
                 >
@@ -163,7 +163,17 @@ const Menu = () => {
       <button className="see-all" onClick={handleSeeAll}>
         {showMore ? "Close All" : "See All"}
       </button>
-      <ToastContainer />
+      <ToastContainer
+        autoClose={1000}  
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
