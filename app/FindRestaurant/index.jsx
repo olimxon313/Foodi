@@ -1,12 +1,19 @@
 import './FindRestaurant.scss';
 import { useTranslation } from 'react-i18next';
+import React from 'react';
 
 const FindRestaurant = () => {
   const { t } = useTranslation();
   return (
     <div className="find-restaurant-container" id="address">
       <div className="find-restaurant-info">
-        <h2>{ t('findUs.title') }</h2>
+        <h2>{ t('findUs.title') .split("\n")
+                .map((line, index) => (
+                <React.Fragment key={index}>
+                  {line}
+                  {index < t("landing.text-1").split("\n").length - 1 && <br />}
+                </React.Fragment>
+              )) }</h2>
         <p>{ t('findUs.description') }</p>
         <button className="find-restaurant-button">{ t('findUs.button') }</button>
       </div>

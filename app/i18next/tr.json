@@ -36,7 +36,7 @@
   },
   "about": {
     "title": "Neden En İyi Yemek Yapıcısıyız",
-    "description": "Mükemmel bir mutfak sanatını deneyimleyin. Yemek pişirme tutkumuz, en taze malzemelerle sevgiyle hazırlanmış en iyi tatları masanıza getiriyor.",
+    "description": "Mükemmel bir mutfak sanatını deneyimleyin. Yemek pişirme tutkumuz, en taze malzemelerle \n sevgiyle hazırlanmış en iyi tatları masanıza getiriyor.",
     "text": "Okuyucunun düzenle dikkati dağılacağı uzun zamandır bilinen bir gerçektir. Lorem Ipsum kullanmanın amacı, İngilizceye kıyasla daha az normal bir harf dağılımına sahip olmaktır. Birçok masaüstü yayıncılık paketi ve web sayfası düzenleyicisi şimdi varsayılan model metni olarak Lorem Ipsum'u kullanıyor. 'Lorem ipsum' araması, hala ilk aşamalarında olan birçok web sitesini ortaya çıkaracaktır. Çeşitli sürümler yıllar içinde gelişti, bazen kazayla, bazen kasıtlı olarak. Bir okuyucunun düzenli içeriğe baktığında dikkati dağılacağı uzun zamandır bilinen bir gerçektir. Normal harf dağılımı, 'Content' kullanımına kıyasla daha iyidir. Birçok masaüstü yayıncılık paketi ve web sayfası düzenleyicisi 'lorem ipsum' arayarak birçok web sitesini bulacaktır.",
     "videoAlt": "Mutfak mükemmeliyet videosu"
   },
@@ -62,7 +62,7 @@
     "title": "Müşterilerimizin Yorumları"
   },
   "findUs": {
-    "title": "Restoranlarımız. Nereden Bulunabilirsiniz?",
+    "title": "Restoranlarımız. \n Nereden Bulunabilirsiniz?",
     "description": "Sevgiyle hazırlanmış mutfak sanatını deneyimlemek isteyenler icin restoranlarımızın adreslerini bulun.",
     "button": "En Yakın Times Square"
   },
