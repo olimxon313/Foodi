@@ -47,8 +47,6 @@
         align-items: center;
         gap: 40px;
         color: white;
-
-        .cart,
         .search {
             cursor: pointer;
             width: 34px;
@@ -60,7 +58,13 @@
                 transform: scale(1.1);
             }
         }
-
+.cart{
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    left: 30px;
+    top: 40px;
+}
         .member {
             cursor: pointer;
             width: 200px;
