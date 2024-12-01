@@ -6,14 +6,17 @@ import { IoCartSharp } from "react-icons/io5";
 import { RiSearchLine, RiCloseLine } from "react-icons/ri";
 import './header.scss';
 import productsData from '../../db.json'; 
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
+    const { t , i18n} = useTranslation();
     const [menuOpen, setMenuOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [isLogged, setIsLogged] = useState(false);
-
+    const [lang, setLang] = useState('');
+    i18n.changeLanguage(lang);
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         setIsLogged(!!storedToken); 
@@ -29,7 +32,6 @@ export default function Header() {
             setSearchResults([]);
         }
     };
-
     const handleSearch = (e) => {
         const value = e.target.value.toLowerCase();
         setSearchValue(value);
@@ -52,7 +54,7 @@ export default function Header() {
                 <div></div>
             </div>
             <div className="links">
-                <Link href="/" onClick={() => setMenuOpen(false)}>Welcome</Link>
+                <Link href="/" onClick={() => setMenuOpen(false)}>{t('header.home')}</Link>
                 <Link href="#menu" onClick={() => setMenuOpen(false)}>Our Menu</Link>
                 <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
                 <Link href="#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
@@ -64,9 +66,9 @@ export default function Header() {
                 <div className="language-dropdown">
                     <span className="selected-language">Русский</span>
                     <div className="dropdown-menu">
-                        <div className="dropdown-item">Русский</div>
-                        <div className="dropdown-item">Turkish</div>
-                        <div className="dropdown-item">English</div>
+                        <div className="dropdown-item" value="ru" onClick={ () => setLang('ru')}>Русский</div>
+                        <div className="dropdown-item" value="tr" onClick={ () => setLang('tr')}>Turkish</div>
+                        <div className="dropdown-item" value="en" onClick={ () => setLang('en')}>English</div>
                     </div>
                 </div>
 

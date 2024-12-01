@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "./header"
-
+import './i18next'
+import  I18NProvider from './i18next/i18nProvider.jsx';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
+        <I18NProvider>
+          <Header />
+          {children}
+        </I18NProvider>
       </body>
     </html>
   );
