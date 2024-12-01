@@ -54,7 +54,8 @@
             width: 34px;
             height: 34px;
             transition: transform 0.3s ease;
-            color: white    ;
+            color: white;
+
             &:hover {
                 transform: scale(1.1);
             }
@@ -78,7 +79,8 @@
                 box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
                 transform: scale(1.1);
             }
-            &:active{
+
+            &:active {
                 transform: scale(0.9);
                 background-color: #cccccc8f;
             }
@@ -94,6 +96,7 @@
         height: 30px;
         cursor: pointer;
         z-index: 2;
+
         div {
             width: 100%;
             height: 5px;
@@ -108,12 +111,15 @@
         .links {
             display: none;
         }
-        .logo{
+
+        .logo {
             margin-right: 30px;
         }
+
         .icons {
             display: none;
         }
+
         &.open {
             position: fixed;
             height: 100%;
@@ -121,6 +127,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             .links {
                 display: flex;
                 flex-direction: column;
@@ -137,102 +144,130 @@
                     font-size: 18px;
                 }
             }
+
             .logo {
                 display: none;
             }
+
             .icons {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 20px;
                 margin-top: 10px;
-                
+
                 .member {
                     width: 80%;
                     max-width: 250px;
                 }
             }
         }
+
         #burger-menu-wrapper {
-            display:block;
+            display: block;
             position: fixed;
         }
     }
 }
+
+
+
+
+
 .language-dropdown {
     position: relative;
     display: inline-block;
-    font-family: Arial, sans-serif;
-  
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+
     .selected-language {
-      background-color: #f4f4f4;
-      padding: 10px 15px;
-      border: 1px solid #ddd;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 14px;
-      color: #333;
-      text-align: center;
-      width: 120px;
-      transition: all 0.3s ease;
-  
-      &:hover {
-        background-color: #eaeaea;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-    }
-  
-    .dropdown-menu {
-      position: absolute;
-      top: 20px;
-      left: -15px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-top: 5px;
-      width: 120px;
-      display: none;
-      z-index: 10;
-        .active{
-            background-color: #000000;
-            color: rgb(255, 255, 255);
-        }
-      .dropdown-item {
-        padding: 10px 15px;
+        background-color: #fff;
+        padding: 10px 20px;
+        border: 2px solid #ddd;
+        border-radius: 30px;
+        cursor: pointer;
         font-size: 14px;
         color: #333;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        &:hover{
-            background-color: #000000;
-            color: white;
+        text-align: center;
+        width: 140px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            background-color: #f4f4f4;
+            border-color: #ccc;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-      }
+
+        .arrow-icon {
+            transition: transform 0.3s ease;
+        }
     }
-  
-    &:hover .dropdown-menu {
-      display: block;
-    }
-  
-    @media (max-width: 950px) {
-      .selected-language {
-        font-size: 12px;
-        padding: 8px 12px;
-        width: 100px;
-      }
-  
-      .dropdown-menu {
-        width: 100px;
-  
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: -10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 160px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: none;
+        z-index: 10;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+
         .dropdown-item {
-          font-size: 12px;
-          padding: 8px 12px;
+            padding: 12px;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #2b2c2d;
+                color: #fff;
+            }
+
+            &.active {
+                background-color: #2b2c2d;
+                color: #fff;
+            }
         }
-      }
     }
-  }
-  
+
+    &:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    @media (max-width: 950px) {
+        .selected-language {
+            font-size: 12px;
+            padding: 8px 15px;
+            width: 120px;
+        }
+
+        .dropdown-menu {
+            width: 140px;
+        }
+
+        .dropdown-item {
+            font-size: 12px;
+            padding: 10px;
+        }
+    }
+}
+
+
+
+
+
+
 
 .search-input {
     width: 90%;
@@ -244,26 +279,26 @@
     background-color: #f7f7f7;
     color: #333;
     transition: all 0.3s ease;
-  
-    &:focus {
-      border-color: #4a90e2;
-      outline: none;
-      box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
-      background-color: #fff;
-    }
-  
-    &::placeholder {
-      color: #aaa;
-      font-style: italic;
-    }
-  
-    @media (max-width: 600px) {
-      max-width: 100%;
-    }
-  }
-  
 
-  .search-dropdown {
+    &:focus {
+        border-color: #4a90e2;
+        outline: none;
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        background-color: #fff;
+    }
+
+    &::placeholder {
+        color: #aaa;
+        font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+        max-width: 100%;
+    }
+}
+
+
+.search-dropdown {
     position: relative;
     width: 100%;
 }

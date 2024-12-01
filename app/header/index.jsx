@@ -89,7 +89,7 @@ export default function Header() {
                 <div className="language-dropdown">
                     <span className="selected-language">{currentLang}</span>
                     <div className="dropdown-menu">
-                        <div className={`dropdown-item ${ru ? 'active' : ''}`}  onClick={ () => setRus()}>Русский</div><div className={`dropdown-item ${en ? 'active' : ''}`} value="ru" onClick={ () => setEn()}>Русский</div>
+                        <div className={`dropdown-item ${ru ? 'active' : ''}`}  onClick={ () => setRus()}>Русский</div>
                         <div className={`dropdown-item ${tr ? 'active' : ''}`} onClick={ () => setTrk()}>Turkish</div>
                         <div className={`dropdown-item ${en ? 'active' : ''}`}  onClick={ () => setEng()}>English</div>
                     </div>
