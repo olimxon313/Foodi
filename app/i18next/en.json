@@ -1,10 +1,63 @@
 {
     "header": {
         "home": "Home",
+        "menu": "Menu",
         "about": "About",
-        "contact": "Contact"
+        "contact": "Contact",
+        "account": "Account",
+        "register": "Become a member"
     },
-    "landing":{
-        "text-1":"Welcome! \n We Made Delicious Food for You"
+    "landing": {
+        "text-1": "Welcome! \n We Made Delicious \n Food for You",
+        "text-2": "Experience the art of culinary perfection. Our passion for cooking brings the finest flavors to your table, crafted with love and the freshest ingredients.",
+        "button": "Order Online"
+    },
+    "stats": {
+        "title": "We believe in making quality food",
+        "happyCustomers": "Happy Customers",
+        "customerSatisfaction": "Customer Satisfaction",
+        "ourBranches": "Our Branches",
+        "totalEmployees": "Total Employees"
+    },
+    "footer": {
+        "products": "Our Products",
+        "menus": "Our menus",
+        "burgers": "Our burgers",
+        "sides": "Our times sides",
+        "naanwiches": "Our naanwiches",
+        "legal": "Legal information",
+        "legalNotice": "Legal Notice",
+        "contact": "Contact us",
+        "contacts": "Contacts",
+        "addresses": "Our addresses",
+        "franchise": "Become a Times Square franchisee",
+        "accept": "We accept",
+        "rights": "All rights reserved."
+    },
+    "about": {
+        "title": "Why We are Best Food Maker",
+        "description": "Experience the art of culinary perfection. Our passion for cooking brings the finest flavors to your table, crafted with love and the freshest ingredients.",
+        "text": "It is a long established fact that a reader will be distracted by the layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many websites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The normal distribution of letters, as opposed to using 'Content'. Many desktop publishing packages and web page editors search for 'lorem ipsum' will uncover many websites still in humour and the like.",
+        "videoAlt": "Culinary perfection video"
+    },
+    "contact": {
+        "title": "Contact Us",
+        "nameLabel": "Name",
+        "namePlaceholder": "Enter your name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Enter your email",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Enter your message",
+        "send": "Send",
+        "sending": "Sending...",
+        "successMessage": "Message sent successfully!",
+        "errorMessage": "Failed to send message",
+        "errors": {
+            "emptyName": "Name cannot be empty!",
+            "invalidEmail": "Please enter a valid email!",
+            "emptyMessage": "Message cannot be empty!"
+        }
     }
+    
+
 }

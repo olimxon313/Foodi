@@ -2,6 +2,7 @@
 import './review.scss';
 import { FaQuoteLeft, FaHeart } from "react-icons/fa";
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const testimonials = [
   {
@@ -35,7 +36,7 @@ const testimonials = [
 
 const Testimonials = () => {
   const [likes, setLikes] = useState(testimonials.map((testimonial) => testimonial.likes));
-
+  const { t } = useTranslation();
   const handleLike = (index) => {
     if (likes[index] === 0) {
       const newLikes = [...likes];
@@ -43,7 +44,6 @@ const Testimonials = () => {
       setLikes(newLikes);
     }
   };
-
   return (
     <section className="testimonials">
       <h2>What Our Clients Are Saying</h2>

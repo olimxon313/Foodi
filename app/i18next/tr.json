@@ -1,10 +1,61 @@
 {
-    "header": {
-        "home": "hoş geldiniz",
-        "about": "Hakkımızda",
-        "contact": "İletişim"
-    },
-    "landing":{
-        "text-1":"Hoşgeldiniz! \n Bizimle yemek yiyebilirsiniz"
+  "header": {
+    "home": "Hoş geldiniz",
+    "menu": "Menü",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "account": "Hesap",
+    "register": "Üye ol"
+  },
+  "landing": {
+    "text-1": "Hoş geldiniz! \n Biz sizin için lezzetli yemekler yaptık",
+    "text-2": "Mutfak mükemmeliyet sanatını keşfedin. Yemek yapma tutkumuz, sevgiyle ve en taze malzemelerle hazırlanmış, en iyi tatları masanıza getiriyor.",
+    "button": "Online Sipariş Ver"
+  },
+  "stats": {
+    "title": "Kaliteli yemek yapmaya inanıyoruz",
+    "happyCustomers": "Mutlu Müşteriler",
+    "customerSatisfaction": "Müşteri Memnuniyeti",
+    "ourBranches": "Şubelerimiz",
+    "totalEmployees": "Toplam Çalışanlar"
+  },
+  "footer": {
+    "products": "Ürünlerimiz",
+    "menus": "Menülerimiz",
+    "burgers": "Burgerlerimiz",
+    "sides": "Yan Ürünlerimiz",
+    "naanwiches": "Naanwichlerimiz",
+    "legal": "Yasal Bilgiler",
+    "legalNotice": "Yasal Bildirim",
+    "contact": "Bize Ulaşın",
+    "contacts": "İletişim",
+    "addresses": "Adreslerimiz",
+    "franchise": "Times Square bayisi olun",
+    "accept": "Kabul Ettiklerimiz",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "about": {
+    "title": "Neden En İyi Yemek Yapıcısıyız",
+    "description": "Mükemmel bir mutfak sanatını deneyimleyin. Yemek pişirme tutkumuz, en taze malzemelerle sevgiyle hazırlanmış en iyi tatları masanıza getiriyor.",
+    "text": "Okuyucunun düzenle dikkati dağılacağı uzun zamandır bilinen bir gerçektir. Lorem Ipsum kullanmanın amacı, İngilizceye kıyasla daha az normal bir harf dağılımına sahip olmaktır. Birçok masaüstü yayıncılık paketi ve web sayfası düzenleyicisi şimdi varsayılan model metni olarak Lorem Ipsum'u kullanıyor. 'Lorem ipsum' araması, hala ilk aşamalarında olan birçok web sitesini ortaya çıkaracaktır. Çeşitli sürümler yıllar içinde gelişti, bazen kazayla, bazen kasıtlı olarak. Bir okuyucunun düzenli içeriğe baktığında dikkati dağılacağı uzun zamandır bilinen bir gerçektir. Normal harf dağılımı, 'Content' kullanımına kıyasla daha iyidir. Birçok masaüstü yayıncılık paketi ve web sayfası düzenleyicisi 'lorem ipsum' arayarak birçok web sitesini bulacaktır.",
+    "videoAlt": "Mutfak mükemmeliyet videosu"
+  },
+  "contact": {
+    "title": "Bize Ulaşın",
+    "nameLabel": "Ad",
+    "namePlaceholder": "Adınızı girin",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "E-postanızı girin",
+    "messageLabel": "Mesaj",
+    "messagePlaceholder": "Mesajınızı girin",
+    "send": "Gönder",
+    "sending": "Gönderiliyor...",
+    "successMessage": "Mesaj başarıyla gönderildi!",
+    "errorMessage": "Mesaj gönderilemedi",
+    "errors": {
+      "emptyName": "Ad boş olamaz!",
+      "invalidEmail": "Lütfen geçerli bir e-posta adresi girin!",
+      "emptyMessage": "Mesaj boş olamaz!"
     }
+  }
 }

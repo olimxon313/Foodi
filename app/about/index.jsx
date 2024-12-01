@@ -1,30 +1,23 @@
-import './about.scss'
+import './about.scss';
+import { useTranslation } from 'react-i18next';
+
 export default function About() {
+    const { t } = useTranslation();
+
     return (
         <div id="about" className="about">
-            <h1>Why We are Best Food Maker</h1>
+            <h1>{t('about.title')}</h1>
             <br />
-            <p>Experience the art of culinary perfection. Our passion for cooking brings <br /> the finest flavors to your table, crafted with love and the freshest ingredients.</p>
+            <p>{t('about.description')}</p>
 
             <div>
                 <div className='text'>
-                    It is a long established fact that a reader will be distracted  
-                    layout. The point of using Lorem Ipsum is that it has a more- 
-                    or-less normal distribution of letters, as opposed to using 
-                    English. Many desktop publishing packages and web page 
-                    editors now use Lorem Ipsum as their default model text, 
-                    and a search for 'lorem ipsum' will uncover many web sites 
-                    still in their infancy. Various versions have evolved over the 
-                    years, sometimes by accident, sometimes on purpose It is a 
-                    long established fact that a reader will be distracted by the 
-                    readable content of a page when looking at its layout. The
-                    normal distribution of letters, as opposed to using 'Content 
-                    Many desktop publishing packages and web page editors 
-                    search for 'lorem ipsum' will uncover many web sites still in 
-                    humour and the like.
+                    {t('about.text')}
                 </div>
                 <div className='video'>
-                    <a href="https://youtu.be/dQw4w9WgXcQ?si=3xsrZEjwKGVM-_2g" target="_blank"><img src="/images/Video-1.png" alt="" /></a>
+                    <a href="https://youtu.be/dQw4w9WgXcQ?si=3xsrZEjwKGVM-_2g" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/Video-1.png" alt={t('about.videoAlt')} />
+                    </a>
                 </div>
             </div>
         </div>

@@ -78,9 +78,9 @@ export default function Header() {
             </div>
             <div className="links">
                 <Link href="/" onClick={() => setMenuOpen(false)}>{t('header.home')}</Link>
-                <Link href="#menu" onClick={() => setMenuOpen(false)}>Our Menu</Link>
-                <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-                <Link href="#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+                <Link href="#menu" onClick={() => setMenuOpen(false)}>{t('header.menu')}</Link>
+                <a href="#about" onClick={() => setMenuOpen(false)}>{t('header.about')}</a>
+                <Link href="#contact" onClick={() => setMenuOpen(false)}>{t('header.contact')}</Link>
             </div>
             <div className="logo">
                 <img src={'/images/Logo.png'} alt="Logo" />
@@ -132,9 +132,9 @@ export default function Header() {
                     )}
                 </div>
                 {isLogged ? (
-                    <Link href="/basket"><button className="member">Account</button></Link>
+                    <Link href="/basket"><button className="member">{t('header.account')}</button></Link>
                 ) : (
-                    <Link href="/login"><button className="member">Become a Member</button></Link>
+                    <Link href="/login"><button className="member">{t('header.register')}</button></Link>
                 )}
             </div>
         </div>

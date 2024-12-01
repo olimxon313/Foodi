@@ -1,24 +1,26 @@
 'use client';
+
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { toast, ToastContainer } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import 'react-toastify/dist/ReactToastify.css';
 import './contact.scss';
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     client_name: '',
     client_email: '',
-    portfolio: '',
     message: '',
   });
 
   const [loading, setLoading] = useState(false);
 
   const validateForm = () => {
-    const { client_name, client_email, portfolio, message } = formData;
+    const { client_name, client_email, message } = formData;
     if (!client_name) {
-      toast.error("Имя не может быть пустым!", {
+      toast.error(t('contact.errors.emptyName'), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: true,
@@ -27,7 +29,7 @@ const ContactForm = () => {
       return false;
     }
     if (!client_email || !/\S+@\S+\.\S+/.test(client_email)) {
-      toast.error("Пожалуйста, введите корректный email!", {
+      toast.error(t('contact.errors.invalidEmail'), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: true,
@@ -36,7 +38,7 @@ const ContactForm = () => {
       return false;
     }
     if (!message) {
-      toast.error("Сообщение не может быть пустым!", {
+      toast.error(t('contact.errors.emptyMessage'), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: true,
@@ -49,37 +51,35 @@ const ContactForm = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    if (!validateForm()) return; // Прерываем отправку, если есть ошибки валидации
+    if (!validateForm()) return;
 
     setLoading(true);
 
     emailjs
       .send(
-        'service_6ha4lf7', // Service ID
-        'template_2fbve54', // Template ID 
+        'service_6ha4lf7',
+        'template_2fbve54',
         formData,
-        'nU1wfnyLZoLgMkqtZ' // Public API key
+        'nU1wfnyLZoLgMkqtZ'
       )
       .then(
-        (response) => {
+        () => {
           setLoading(false);
-          toast.success("Сообщение отправлено успешно!", {
+          toast.success(t('contact.successMessage'), {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: true,
           });
 
-          // Очистка формы после успешной отправки
           setFormData({
             client_name: '',
             client_email: '',
-            portfolio: '',
             message: '',
           });
         },
-        (err) => {
+        () => {
           setLoading(false);
-          toast.error("Не удалось отправить сообщение", {
+          toast.error(t('contact.errorMessage'), {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: true,
@@ -95,48 +95,48 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-container" id='contact'>
+    <div className="contact-container" id="contact">
       <ToastContainer />
       <div className="contact-form-container">
-        <h2>Связаться с нами</h2>
+        <h2>{t('contact.title')}</h2>
         <form onSubmit={submit} className="contact-form">
           <div className="form-group">
-            <label htmlFor="name">Имя</label>
+            <label htmlFor="name">{t('contact.nameLabel')}</label>
             <input
               type="text"
               onChange={handleFormInfo}
               id="name"
               name="client_name"
-              placeholder="Введите ваше имя"
+              placeholder={t('contact.namePlaceholder')}
               value={formData.client_name}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t('contact.emailLabel')}</label>
             <input
               type="email"
               onChange={handleFormInfo}
               id="email"
               name="client_email"
-              placeholder="Введите ваш email"
+              placeholder={t('contact.emailPlaceholder')}
               value={formData.client_email}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="message">Сообщение</label>
+            <label htmlFor="message">{t('contact.messageLabel')}</label>
             <textarea
               id="message"
               onChange={handleFormInfo}
               name="message"
-              placeholder="Введите ваше сообщение"
+              placeholder={t('contact.messagePlaceholder')}
               value={formData.message}
             ></textarea>
           </div>
 
           <button className="submit-button" type="submit" disabled={loading}>
-            {loading ? "Отправка..." : "Отправить"}
+            {loading ? t('contact.sending') : t('contact.send')}
           </button>
         </form>
       </div>
