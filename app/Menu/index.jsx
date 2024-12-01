@@ -4,7 +4,8 @@ import menuItems from '../../db.json';
 import "./menu.scss";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { useTranslation } from 'react-i18next';
+import { FaCartShopping } from "react-icons/fa6";
 const Menu = () => {
   const [activeTab, setActiveTab] = useState("All");
   const [visibleItemsCount, setVisibleItemsCount] = useState(6);
@@ -14,7 +15,7 @@ const Menu = () => {
   const [userBasket, setUserBasket] = useState([]);
   const [isLogged, setIsLogged] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(false);
-
+  const { t } = useTranslation();
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -63,16 +64,16 @@ const Menu = () => {
 
   async function handleAddToBasket(productId) {
     if (!productId) {
-      return; // Убираем уведомления, просто завершаем функцию, если нет ID товара
+      return;
     }
 
     if (!isLogged) {
-      toast.error("Please log in to add items to the basket.");
-      return; // Если пользователь не авторизован, просто завершаем функцию
+      toast.error(t("menu.loginError"));
+      return;
     }
 
     if (buttonDisabled) {
-      return; // Если кнопка заблокирована, не выполняем функцию
+      return;
     }
 
     setButtonDisabled(true);
@@ -80,7 +81,7 @@ const Menu = () => {
     try {
       const product = menuItems.find((item) => item.id === productId);
       if (!product) {
-        return; // Если товар не найден, завершаем выполнение
+        return;
       }
 
       const response = await fetch(`http://localhost:3001/users/${userId}`);
@@ -88,12 +89,12 @@ const Menu = () => {
 
       const user = await response.json();
       if (!user || !user.basket) {
-        return; 
+        return;
       }
 
       const productExists = user.basket.some((item) => item.id === productId);
       if (productExists) {
-        toast.info("This item is already in your basket.");
+        toast.info(t("menu.alreadyInBasket"));
         return;
       }
 
@@ -105,18 +106,18 @@ const Menu = () => {
       });
 
       setUserBasket(updatedBasket);
-      toast.success("Item successfully added to your basket.");
+      toast.success(t("menu.itemAdded"));
     } catch (error) {
       console.error("Error adding product to basket:", error);
-      toast.error("Error adding item to basket. Please try again.");
+      toast.error(t("menu.addToBasketError"));
     } finally {
-      setTimeout(() => setButtonDisabled(false), 5000); 
+      setTimeout(() => setButtonDisabled(false), 5000);
     }
   }
 
   return (
     <div id="menu" className="menu" ref={menuRef}>
-      <h2>Our Best & Delicious Menu</h2>
+      <h2>{t("menu.title")}</h2>
       <div className="tabs">
         {["All", "Bread", "Rolls", "Donut", "Pastry", "Cakes", "Cookies"].map((tab, index) => (
           <button
@@ -128,7 +129,7 @@ const Menu = () => {
               setShowMore(false);
             }}
           >
-            {tab}
+            {t(`menu.tabs.${tab}`)}
           </button>
         ))}
       </div>
@@ -150,21 +151,21 @@ const Menu = () => {
               <div className="footer">
                 <span>{item.price}</span>
                 <button
-                  onClick={( ) => handleAddToBasket(item.id)}
+                  onClick={() => handleAddToBasket(item.id)}
                   className="cart"
                   disabled={buttonDisabled}
                 >
-                  🛒
+                 <p style={{ color: "white", fontSize: "18px" }}>🛒</p>
                 </button>
               </div>
             </div>
           ))}
       </div>
       <button className="see-all" onClick={handleSeeAll}>
-        {showMore ? "Close All" : "See All"}
+        {showMore ? t("menu.closeAll") : t("menu.seeAll")}
       </button>
       <ToastContainer
-        autoClose={1000}  
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -179,3 +180,4 @@ const Menu = () => {
 };
 
 export default Menu;
+

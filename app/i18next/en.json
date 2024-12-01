@@ -57,7 +57,77 @@
             "invalidEmail": "Please enter a valid email!",
             "emptyMessage": "Message cannot be empty!"
         }
+    },
+    "testimonials": {
+        "title": "What Our Clients Are Saying",
+        "position": "Position"
+    },
+    "findUs": {
+        "title": "Our Restaurants. Where to Find Us?",
+        "description": "Want to have a superb meal in an exceptional setting with family,\nfriends or work colleagues, here are the addresses of our restaurants.",
+        "button": "Find The Nearest Cheffest"
+    },
+    "menu": {
+        "title": "Our Best & Delicious Menu",
+        "loginError": "Please log in to add items to the basket.",
+        "alreadyInBasket": "This item is already in your basket.",
+        "itemAdded": "Item successfully added to your basket.",
+        "addToBasketError": "Error adding item to basket. Please try again.",
+        "tabs": {
+            "All": "All",
+            "Bread": "Bread",
+            "Rolls": "Rolls",
+            "Donut": "Donut",
+            "Pastry": "Pastry",
+            "Cakes": "Cakes",
+            "Cookies": "Cookies"
+        },
+        "addToCart": "Add to Cart",
+        "seeAll": "See All",
+        "closeAll": "Close All"
+    },
+    "login": {
+        "title": "Login",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "emailPlaceholder": "Enter your email...",
+        "passwordPlaceholder": "Enter your password...",
+        "submitButton": "Login",
+        "noAccount": "Don't have an account?",
+        "success": "Login successful!",
+        "invalidCredentials": "Invalid email or password!",
+        "error": {
+            "loadingUsers": "Failed to load users. Please try again later."
+        }
+    },
+    "registr": {
+        "title": "Register",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "confirmPasswordLabel": "Confirm Password",
+        "emailPlaceholder": "Enter your email...",
+        "passwordPlaceholder": "Enter your password...",
+        "confirmPasswordPlaceholder": "Confirm your password...",
+        "submitButton": "Register",
+        "alreadyAccount": "Already have an account?",
+        "success": "Registration successful!",
+        "error": {
+            "missingFields": "All fields are required!",
+            "passwordMismatch": "Passwords do not match!",
+            "userExists": "A user with this email already exists!",
+            "registrationFailed": "Failed to register. Please try again."
+        }
+    },
+    "basket": {
+        "title": "Your Basket",
+        "logoutButton": "Log out",
+        "emptyBasketMessage": "Your basket is empty.",
+        "confirmDelete": "Are you sure you want to delete this product?",
+        "productRemoved": "Product removed from basket",
+        "error": {
+            "loadUsers": "Failed to load users. Please try again later.",
+            "userNotFound": "User not found",
+            "removeProduct": "Error removing product from basket"
+        }
     }
-    
-
 }

@@ -1,15 +1,14 @@
 import './FindRestaurant.scss';
+import { useTranslation } from 'react-i18next';
 
 const FindRestaurant = () => {
+  const { t } = useTranslation();
   return (
     <div className="find-restaurant-container" id="address">
       <div className="find-restaurant-info">
-        <h2>Our Restaurants. Where to Find Us?</h2>
-        <p>
-          Want to have a superb meal in an exceptional setting with family,
-          friends or work colleagues, here are the addresses of our restaurants.
-        </p>
-        <button className="find-restaurant-button">Find The Nearest Cheffest</button>
+        <h2>{ t('findUs.title') }</h2>
+        <p>{ t('findUs.description') }</p>
+        <button className="find-restaurant-button">{ t('findUs.button') }</button>
       </div>
       <div className="find-restaurant-map">
         <iframe

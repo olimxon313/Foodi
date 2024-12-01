@@ -1,15 +1,17 @@
-'use client'
-import "./basket.scss"
-import { useEffect, useState } from "react"
-import { toast, ToastContainer } from "react-toastify"
+'use client';
+import "./basket.scss";
+import { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next"; // Импортируйте useTranslation
 
 export default function Basket() {
+    const { t } = useTranslation(); // Инициализация перевода
     const [userBasket, setUserBasket] = useState([]);
     const [isLogged, setIsLogged] = useState(false);
     const [id, setId] = useState('');
-    const [user , setUser] = useState()
+    const [user , setUser] = useState();
     const router = useRouter();
 
     useEffect(() => {
@@ -36,7 +38,7 @@ export default function Basket() {
                 })
                 .catch((error) => {
                     console.error("Error fetching user data:", error);
-                    toast.error("Failed to load users. Please try again later.");
+                    toast.error(t("basket.error.loadUsers"));
                 });
         }
     }, [id]);
@@ -56,13 +58,13 @@ export default function Basket() {
     }
 
     async function handleDeleteProduct(productId) {
-        const isConfirmed = confirm("Are you sure you want to delete this product?");
+        const isConfirmed = confirm(t("basket.confirmDelete"));
         if (isConfirmed) {
             try {
                 const response = await fetch(`http://localhost:3001/users/${id}`);
                 const user = await response.json();
                 if (!user) {
-                    toast.error("User not found");
+                    toast.error(t("basket.error.userNotFound"));
                     return;
                 }
 
@@ -78,9 +80,9 @@ export default function Basket() {
                 });
 
                 setUserBasket(updatedBasket);
-                toast.success("Product removed from basket");
+                toast.success(t("basket.productRemoved"));
             } catch (error) {
-                toast.error("Error removing product from basket");
+                toast.error(t("basket.error.removeProduct"));
             }
         }
     }
@@ -101,8 +103,10 @@ export default function Basket() {
             />
             {isLogged ? (
                 <div className="basket-container">
-                    <h2 className="basket-header">Your Basket</h2>
-                    <button className="basket-logout-button" onClick={() => handleLogOut()}>Log out</button>
+                    <h2 className="basket-header">{t("basket.title")}</h2>
+                    <button className="basket-logout-button" onClick={() => handleLogOut()}>
+                        {t("basket.logoutButton")}
+                    </button>
                     <ul>
                         {userBasket.length > 0 ? (
                             userBasket.map((item, index) => (
@@ -112,16 +116,18 @@ export default function Basket() {
                                     <div>{item.price}</div>
                                     <div>{item.title}</div>
                                     <div>{item.category}</div>
-                                    <button className="basket-item-delete-button" onClick={() => handleDeleteProduct(item.id)}>Delete</button>
+                                    <button className="basket-item-delete-button" onClick={() => handleDeleteProduct(item.id)}>
+                                        {t("basket.productRemoved")}
+                                    </button>
                                 </div>
                             ))
                         ) : (
-                            <p className="basket-empty-message">Your basket is empty.</p>
+                            <p className="basket-empty-message">{t("basket.emptyBasketMessage")}</p>
                         )}
                     </ul>
                 </div>
             ) : (
-                <p>Please log in to see your basket.</p>
+                <p>{t("basket.emptyBasketMessage")}</p>
             )}
         </>
     );

@@ -46,7 +46,7 @@ const Testimonials = () => {
   };
   return (
     <section className="testimonials">
-      <h2>What Our Clients Are Saying</h2>
+      <h2>{ t('testimonials.title') }</h2>
       <div className="grid">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="card">

@@ -60,6 +60,14 @@
           "id": 9,
           "category": "Donut",
           "path": "/images/burger-2.png"
+        },
+        {
+          "title": "Butter Chicken Taco",
+          "price": "$1.15",
+          "description": "Classic taco with a butter chicken twist.",
+          "id": 2,
+          "category": "Rolls",
+          "path": "/images/burger-2.png"
         }
       ]
     }

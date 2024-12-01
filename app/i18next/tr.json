@@ -57,5 +57,76 @@
       "invalidEmail": "Lütfen geçerli bir e-posta adresi girin!",
       "emptyMessage": "Mesaj boş olamaz!"
     }
+  },
+  "Testimonials": {
+    "title": "Müşterilerimizin Yorumları"
+  },
+  "findUs": {
+    "title": "Restoranlarımız. Nereden Bulunabilirsiniz?",
+    "description": "Sevgiyle hazırlanmış mutfak sanatını deneyimlemek isteyenler icin restoranlarımızın adreslerini bulun.",
+    "button": "En Yakın Times Square"
+  },
+  "menu": {
+    "title": "En İyi ve Lezzetli Menümüz",
+    "loginError": "Sepete ürün eklemek için giriş yapmalısınız.",
+    "alreadyInBasket": "Bu ürün zaten sepetinizde.",
+    "itemAdded": "Ürün sepete başarıyla eklendi.",
+    "addToBasketError": "Ürün sepete eklenirken bir hata oluştu. Lütfen tekrar deneyin.",
+    "tabs": {
+      "All": "Hepsi",
+      "Bread": "Ekmek",
+      "Rolls": "Rulolar",
+      "Donut": "Dondurma",
+      "Pastry": "Hamur işleri",
+      "Cakes": "Kekler",
+      "Cookies": "Kurabiyeler"
+    },
+    "addToCart": "Sepete Ekle",
+    "seeAll": "Tümünü Görüntüle",
+    "closeAll": "Kapat"
+  },
+  "login": {
+    "title": "Giriş Yap",
+    "emailLabel": "E-posta",
+    "passwordLabel": "Şifre",
+    "emailPlaceholder": "E-postanızı girin...",
+    "passwordPlaceholder": "Şifrenizi girin...",
+    "submitButton": "Giriş Yap",
+    "noAccount": "Hesabınız yok mu?",
+    "success": "Giriş başarılı!",
+    "invalidCredentials": "Geçersiz e-posta veya şifre!",
+    "error": {
+      "loadingUsers": "Kullanıcılar yüklenirken hata oluştu. Lütfen tekrar deneyin."
+    }
+  },
+  "registr": {
+    "title": "Kayıt Ol",
+    "emailLabel": "E-posta",
+    "passwordLabel": "Şifre",
+    "confirmPasswordLabel": "Şifreyi Onayla",
+    "emailPlaceholder": "E-postanızı girin...",
+    "passwordPlaceholder": "Şifrenizi girin...",
+    "confirmPasswordPlaceholder": "Şifrenizi onaylayın...",
+    "submitButton": "Kayıt Ol",
+    "alreadyAccount": "Hesabınız var mı?",
+    "success": "Kayıt başarılı!",
+    "error": {
+      "missingFields": "Tüm alanlar zorunludur!",
+      "passwordMismatch": "Şifreler uyuşmuyor!",
+      "userExists": "Bu e-posta ile kullanıcı zaten var!",
+      "registrationFailed": "Kayıt başarısız. Lütfen tekrar deneyin."
+    }
+  },
+  "basket": {
+    "title": "Sepetiniz",
+    "logoutButton": "Çıkış Yap",
+    "emptyBasketMessage": "Sepetiniz boş.",
+    "confirmDelete": "Bu ürünü silmek istediğinizden emin misiniz?",
+    "productRemoved": "Ürün sepetten kaldırıldı",
+    "error": {
+      "loadUsers": "Kullanıcıları yüklerken bir hata oluştu. Lütfen tekrar deneyin.",
+      "userNotFound": "Kullanıcı bulunamadı",
+      "removeProduct": "Ürün sepetten kaldırılırken bir hata oluştu"
+    }
   }
 }
