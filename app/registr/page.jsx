@@ -62,7 +62,6 @@ export default function Registr() {
     return (
         <div className="registr">
             <div className="registr-wrapper">
-                Временно не работает!   
                 <h1 className="registr-title">Register</h1>
                 <form className="registr-form" onSubmit={handleRegister}>
                     <label>Email</label>
