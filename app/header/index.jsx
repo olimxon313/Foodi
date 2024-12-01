@@ -15,8 +15,10 @@ export default function Header() {
     const [searchResults, setSearchResults] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [isLogged, setIsLogged] = useState(false);
-    const [lang, setLang] = useState('');
-    i18n.changeLanguage(lang);
+    const [en, setEn] = useState(false);
+    const [ru, setRu] = useState(true);
+    const [tr, setTr] = useState(false);
+    const [currentLang , setCurrentLang] = useState('Русский');
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         setIsLogged(!!storedToken); 
@@ -32,6 +34,27 @@ export default function Header() {
             setSearchResults([]);
         }
     };
+    function setEng(){
+        i18n.changeLanguage('en');
+        setCurrentLang('English');
+        setEn(true);
+        setRu(false);
+        setTr(false);
+    }
+    function setRus(){
+        i18n.changeLanguage('ru');
+        setCurrentLang('Русский');
+        setEn(false);
+        setRu(true);
+        setTr(false);
+    }
+    function setTrk(){
+        i18n.changeLanguage('tr');
+        setCurrentLang('Turkish');
+        setEn(false);
+        setRu(false);
+        setTr(true);
+    }
     const handleSearch = (e) => {
         const value = e.target.value.toLowerCase();
         setSearchValue(value);
@@ -64,11 +87,11 @@ export default function Header() {
             </div>
             <div className="icons">
                 <div className="language-dropdown">
-                    <span className="selected-language">Русский</span>
+                    <span className="selected-language">{currentLang}</span>
                     <div className="dropdown-menu">
-                        <div className="dropdown-item" value="ru" onClick={ () => setLang('ru')}>Русский</div>
-                        <div className="dropdown-item" value="tr" onClick={ () => setLang('tr')}>Turkish</div>
-                        <div className="dropdown-item" value="en" onClick={ () => setLang('en')}>English</div>
+                        <div className={`dropdown-item ${ru ? 'active' : ''}`}  onClick={ () => setRus()}>Русский</div><div className={`dropdown-item ${en ? 'active' : ''}`} value="ru" onClick={ () => setEn()}>Русский</div>
+                        <div className={`dropdown-item ${tr ? 'active' : ''}`} onClick={ () => setTrk()}>Turkish</div>
+                        <div className={`dropdown-item ${en ? 'active' : ''}`}  onClick={ () => setEng()}>English</div>
                     </div>
                 </div>
 

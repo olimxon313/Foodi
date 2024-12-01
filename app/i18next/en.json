@@ -3,5 +3,8 @@
         "home": "Home",
         "about": "About",
         "contact": "Contact"
+    },
+    "landing":{
+        "text-1":"Welcome! \n We Made Delicious Food for You"
     }
 }

@@ -3,5 +3,8 @@
         "home": "hoş geldiniz",
         "about": "Hakkımızda",
         "contact": "İletişim"
+    },
+    "landing":{
+        "text-1":"Hoşgeldiniz! \n Bizimle yemek yiyebilirsiniz"
     }
 }

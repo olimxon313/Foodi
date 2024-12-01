@@ -1,3 +1,4 @@
+'use client'
 import './landing.scss'
 import About from './about';
 import Menu from './Menu'
@@ -5,15 +6,15 @@ import Footer from './Footer'
 import Review from './review'
 import Conact from './contact'
 import FindRestaurant from './FindRestaurant'
-
+import { useTranslation } from 'react-i18next';
 export default function Home() {
+  const { t } = useTranslation()
   return (
     <main>
       <div className="home">
         <div className='title'>
           <h1>
-            Welcome! <br />
-            We Made Delicious Food for You <br />
+           {t("landing.text-1")}
           </h1>
           <p>
             Experience the art of culinary perfection. Our passion for cooking brings the finest <br /> flavors to your table, crafted with love and the freshest ingredients.
@@ -33,7 +34,7 @@ export default function Home() {
             <p>Happy Customers </p>
           </div>
           <div className='stats-item'>
-          <h1>98%</h1> <br />
+            <h1>98%</h1> <br />
             <p>Customer Satisfaction</p>
           </div>
           <div className='stats-item'>
