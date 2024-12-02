@@ -86,6 +86,8 @@ export default function Header() {
                 <img src={'/images/Logo.png'} alt="Logo" />
             </div>
             <div className="icons">
+
+                
                 <div className="language-dropdown">
                     <span className="selected-language">{currentLang}</span>
                     <div className="dropdown-menu">

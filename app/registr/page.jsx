@@ -5,11 +5,11 @@ import Link from "next/link";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
-import { useTranslation } from "react-i18next"; // Импортируйте useTranslation
+import { useTranslation } from "react-i18next"; 
 
 export default function Registr() {
     const router = useRouter();
-    const { t } = useTranslation(); // Инициализация перевода
+    const { t } = useTranslation(); 
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -64,6 +64,7 @@ export default function Registr() {
     return (
         <div className="registr">
             <div className="registr-wrapper">
+                Временно не работает!
                 <h1 className="registr-title">{t("registr.title")}</h1>
                 <form className="registr-form" onSubmit={handleRegister}>
                     <label>{t("registr.emailLabel")}</label>

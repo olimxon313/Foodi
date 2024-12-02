@@ -53,6 +53,7 @@ export default function Login() {
     return (
         <div className="login">
             <div className="login-wrapper">
+                        Временно не работает! 
                 <span className="login-title">{t("login.title")}</span>
                 <form className="login-form" onSubmit={handleLogin}>
                     <label htmlFor="email">{t("login.emailLabel")}</label>
