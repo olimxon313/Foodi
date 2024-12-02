@@ -132,9 +132,9 @@ export default function Header() {
                     )}
                 </div>
                 {isLogged ? (
-                    <Link href="/basket"><button className="member">{t('header.account')}</button></Link>
+                    <Link href="/basket"><button className="member" onClick={() => setMenuOpen(false)}>{t('header.account')}</button></Link>
                 ) : (
-                    <Link href="/login"><button className="member">{t('header.register')}</button></Link>
+                    <Link href="/login"><button className="member" onClick={() => setMenuOpen(false)}>{t('header.register')}</button></Link>
                 )}
             </div>
         </div>
