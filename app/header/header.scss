@@ -47,6 +47,8 @@
         align-items: center;
         gap: 40px;
         color: white;
+
+        .cart,
         .search {
             cursor: pointer;
             width: 34px;
@@ -58,13 +60,7 @@
                 transform: scale(1.1);
             }
         }
-.cart{
-    font-size: 40px;
-    color: white;
-    position: absolute;
-    left: 30px;
-    top: 40px;
-}
+
         .member {
             cursor: pointer;
             width: 200px;
@@ -111,6 +107,14 @@
 
     @media (max-width: 950px) {
         grid-template-columns: 1fr;
+
+        .cart {
+            font-size: 40px;
+            color: white;
+            position: absolute;
+            left: 30px;
+            top: 40px;
+        }
 
         .links {
             display: none;
@@ -250,14 +254,19 @@
     }
 
     @media (max-width: 950px) {
+
         .selected-language {
             font-size: 12px;
             padding: 8px 15px;
             width: 120px;
+            margin-bottom: 140px;
         }
+
 
         .dropdown-menu {
             width: 140px;
+            position: absolute;
+            top: 33px;
         }
 
         .dropdown-item {
@@ -265,9 +274,8 @@
             padding: 10px;
         }
     }
+
 }
-
-
 
 
 
