@@ -316,6 +316,7 @@
     position: relative;
     top: 50px;
     .selected-language {
+    position: relative;
       font-size: 12px;
       padding: 8px 15px;
       width: 120px;
@@ -323,9 +324,9 @@
     }
 
     .dropdown-menu {
-      width: 140px;
-      position: absolute;
-      top: 33px;
+      // width: 140px;
+      // position: absolute;
+      // top: 33px;
     }
 
     .dropdown-item {
