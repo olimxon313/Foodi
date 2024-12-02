@@ -10,70 +10,71 @@ import { useTranslation } from "react-i18next";
 export default function Registr() {
     const router = useRouter();
     const { t } = useTranslation(); 
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-        basket: [],
-        confirmPassword: "",
-        id: Math.random()
-    });
+    // const [formData, setFormData] = useState({
+    //     email: "",
+    //     password: "",
+    //     basket: [],
+    //     confirmPassword: "",
+    //     id: Math.random()
+    // });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setFormData({ ...formData, [name]: value });
+    // };
 
-    const handleRegister = async (e) => {
-        e.preventDefault();
-        const { email, password, confirmPassword, basket, id } = formData;
+    // const handleRegister = async (e) => {
+    //     e.preventDefault();
+    //     const { email, password, confirmPassword, basket, id } = formData;
 
-        if (!email || !password || !confirmPassword) {
-            toast.error(t("registr.error.missingFields"));
-            return;
-        }
-        if (password !== confirmPassword) {
-            toast.error(t("registr.error.passwordMismatch"));
-            return;
-        }
+    //     if (!email || !password || !confirmPassword) {
+    //         toast.error(t("registr.error.missingFields"));
+    //         return;
+    //     }
+    //     if (password !== confirmPassword) {
+    //         toast.error(t("registr.error.passwordMismatch"));
+    //         return;
+    //     }
 
-        try {
-            const response = await fetch("http://localhost:3001/users");
-            const users = await response.json();
+    //     try {
+    //         const response = await fetch("http://localhost:3001/users");
+    //         const users = await response.json();
 
-            const userExists = users.some((user) => user.email === email);
-            if (userExists) {
-                toast.error(t("registr.error.userExists"));
-                return;
-            }
-            const newUser = { email, password, basket, id };
-            await fetch("http://localhost:3001/users", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(newUser),
-            });
+    //         const userExists = users.some((user) => user.email === email);
+    //         if (userExists) {
+    //             toast.error(t("registr.error.userExists"));
+    //             return;
+    //         }
+    //         const newUser = { email, password, basket, id };
+    //         await fetch("http://localhost:3001/users", {
+    //             method: "POST",
+    //             headers: { "Content-Type": "application/json" },
+    //             body: JSON.stringify(newUser),
+    //         });
 
-            toast.success(t("registr.success"));
-            setFormData({ email: "", password: "", confirmPassword: "", id: Math.random() });
-            setTimeout(() => router.push("/login"), 2000);
-        } catch (error) {
-            console.error("Error registering user:", error);
-            toast.error(t("registr.error.registrationFailed"));
-        }
-    };
+    //         toast.success(t("registr.success"));
+    //         setFormData({ email: "", password: "", confirmPassword: "", id: Math.random() });
+    //         setTimeout(() => router.push("/login"), 2000);
+    //     } catch (error) {
+    //         console.error("Error registering user:", error);
+    //         toast.error(t("registr.error.registrationFailed"));
+    //     }
+    // };
 
     return (
         <div className="registr">
             <div className="registr-wrapper">
                 Временно не работает!
                 <h1 className="registr-title">{t("registr.title")}</h1>
-                <form className="registr-form" onSubmit={handleRegister}>
+                <form className="registr-form">
+                    {/* onSubmit={handleRegister} */}
                     <label>{t("registr.emailLabel")}</label>
                     <input
                         type="email"
                         name="email"
                         placeholder={t("registr.emailPlaceholder")}
-                        value={formData.email}
-                        onChange={handleChange}
+                        // value={formData.email}
+                        // onChange={handleChange}
                         required
                     />
                     <label>{t("registr.passwordLabel")}</label>
@@ -81,8 +82,8 @@ export default function Registr() {
                         type="password"
                         name="password"
                         placeholder={t("registr.passwordPlaceholder")}
-                        value={formData.password}
-                        onChange={handleChange}
+                        // value={formData.password}
+                        // onChange={handleChange}
                         required
                     />
                     <label>{t("registr.confirmPasswordLabel")}</label>
@@ -90,8 +91,8 @@ export default function Registr() {
                         type="password"
                         name="confirmPassword"
                         placeholder={t("registr.confirmPasswordPlaceholder")}
-                        value={formData.confirmPassword}
-                        onChange={handleChange}
+                        // value={formData.confirmPassword}
+                        // onChange={handleChange}
                         required
                     />
                     <button type="submit" className="registr-button">
@@ -99,7 +100,7 @@ export default function Registr() {
                     </button>
                     <Link href="login">{t("registr.alreadyAccount")}</Link>
                 </form>
-                <ToastContainer
+                {/* <ToastContainer
                     position="top-right"
                     autoClose={5000}
                     hideProgressBar={false}
@@ -110,7 +111,7 @@ export default function Registr() {
                     draggable
                     pauseOnHover
                     theme="light"
-                />
+                /> */}
             </div>
         </div>
     );
