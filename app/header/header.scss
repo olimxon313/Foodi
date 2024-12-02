@@ -165,8 +165,11 @@
                 margin-top: 10px;
 
                 .member {
-                    width: 80%;
+                    width: 100px;
                     max-width: 250px;
+                    position: absolute;
+                    top: 400px;
+                    left: 150px;
                 }
             }
         }
@@ -305,7 +308,7 @@
     }
 
     @media (max-width: 600px) {
-        max-width: 100%;
+    
     }
 }
 
@@ -343,5 +346,23 @@
             text-decoration: none;
             color: inherit;
         }
+    }
+}
+
+
+@media (max-width: 950px) {
+    .search-input {
+        max-width: 120px;
+        .placeholder {
+            font-size: 5px;
+        }
+    }   
+    .search-container {
+        position: absolute;
+        top: 100px;
+        left: 30px;
+    }
+    .search-results {
+        max-width: 110px;
     }
 }
